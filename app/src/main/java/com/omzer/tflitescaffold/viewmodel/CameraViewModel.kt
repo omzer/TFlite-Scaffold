@@ -81,6 +81,7 @@ class CameraViewModel : ViewModel() {
                     it.setSurfaceProvider(cameraPreview.createSurfaceProvider())
                 }
 
+            // TODO: If you want to choose between front/back cameras
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
             try {

@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClassificationResultReceived(result: String) {
         Log.i("Tag", result)
+        // TODO: change to your liking
         when (result) {
             "Blank" -> rootLayout.setBackgroundColor(BLANK)
             "Red" -> rootLayout.setBackgroundColor(RED)

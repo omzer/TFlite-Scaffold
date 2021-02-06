@@ -13,7 +13,6 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.channels.FileChannel
 import java.util.*
-import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.collections.ArrayList
@@ -41,13 +40,10 @@ class ColorsClassifier(private val activity: Activity) {
 
     fun initialize(): Task<Void>? {
         return try {
-            call<Void>(
-                executorService,
-                Callable {
-                    initializeInterpreter()
-                    null
-                }
-            )
+            call(executorService, {
+                initializeInterpreter()
+                null
+            })
         } catch (ex: Exception) {
             return null
         }
